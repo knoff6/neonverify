@@ -16,7 +16,7 @@ The easiest way to run the challenge is using Docker. This ensures the environme
 
 1.  **Clone the repository**:
     ```bash
-    git clone https://github.com/YOUR_USERNAME/NeonVerify.git
+    git clone https://github.com/knoff6/NeonVerify.git
     cd NeonVerify
     ```
 
