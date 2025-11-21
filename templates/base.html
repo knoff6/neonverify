@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeonVerify | Identity Verification</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="scan-line"></div>
+    <div class="container">
+        <header>
+            <h1 class="glitch" data-text="NEON VERIFY">NEON VERIFY</h1>
+            <p class="subtitle">SECURE IDENTITY PROTOCOL v2.0.77</p>
+        </header>
+        
+        <main>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <div class="flash-messages">
+                        {% for category, message in messages %}
+                            <div class="alert alert-{{ category }}">{{ message }}</div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+            
+            {% block content %}{% endblock %}
+        </main>
+
+        <footer>
+            <p>SYSTEM STATUS: <span class="status-online">ONLINE</span></p>
+            <p>&copy; 2077 NeonVerify Corp. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

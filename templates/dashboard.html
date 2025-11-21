@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="dashboard-panel">
+    <div class="user-info">
+        <h3>WELCOME, <span class="user-highlight">{{ username }}</span></h3>
+        <a href="{{ url_for('logout') }}" class="logout-btn">[ DISCONNECT ]</a>
+    </div>
+
+    <div class="upload-section">
+        <h3>// IDENTITY VERIFICATION</h3>
+        <p>Please upload your biometric data or identity documents for verification.</p>
+        <p class="warning">WARNING: UNVERIFIED USERS WILL BE PURGED.</p>
+
+        <form method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="file" class="file-label">SELECT DOCUMENT_</label>
+                <input type="file" id="file" name="file" required>
+            </div>
+            <button type="submit" class="cyber-btn">UPLOAD DATA</button>
+        </form>
+    </div>
+
+    <div class="system-logs">
+        <h4>> RECENT ACTIVITY</h4>
+        <ul>
+            <li>[SYSTEM] User login detected from 192.168.X.X</li>
+            <li>[SYSTEM] Verification protocol initiated...</li>
+            <li>[SYSTEM] Waiting for user input...</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
